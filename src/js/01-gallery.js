@@ -29,8 +29,6 @@ function urlImage(event) {
   const url = event.target.dataset.source;
   if (!url) return;
   console.log(url);
-  const instance = basicLightbox.create(`
-    <img src="${url}" width="800" height="600">
-`);
-  instance.show(() => console.log('lighboxvisible'));
+  const instance = new SimpleLightbox('.gallery a');
+  instance.open();
 }
